@@ -1,5 +1,7 @@
 # 说明
 
+exe 文件在 dist 文件夹中。
+
 变量命名，通过 https://tool.h234.cn/rcode/index.html
 
 有验证
