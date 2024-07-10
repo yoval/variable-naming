@@ -26,6 +26,10 @@ mainForm.combobox.add("小驼峰(方法命名)")
 mainForm.combobox.add("下划线") 
 mainForm.combobox.add("前下划线") 
 mainForm.combobox.add("项目名") 
+//获取验证
+http = inet.http()
+authorization_url = 'https://textdb.online/variable-naming'
+authorization = http.get(authorization_url)
 //选择
 mainForm.combobox.onListChange = function(id,event){  
 	select(mainForm.combobox.selText){
@@ -49,7 +53,7 @@ mainForm.button.oncommand = function(id,event){
     	variable_name  = inet.url.encode(variable_name)
     	url = "https://api.eemu.cn/rcode?query=" + variable_name
     	http = inet.http()
-    	http.addHeaders = "authorization:A7ruPoZYM4BAXeNqzPI2lw2AaGVHK3IY"
+    	http.addHeaders = "authorization:" + authorization
     	resp = http.get(url)
     	data = web.json.parse(resp)
     	mainForm.edit2.text = data['data']['常见命名'][variable_type]
