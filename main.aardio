@@ -3,13 +3,14 @@ import win.ui;
 mainForm = win.form(text="变量命名";right=757;bottom=467;)
 mainForm.add(
 button={cls="button";text="确认";left=639;top=381;right=721;bottom=404;z=8;};
-combobox={cls="combobox";left=59;top=86;right=181;bottom=107;edge=1;items={};mode="dropdown";z=3;};
+combobox={cls="combobox";left=133;top=80;right=255;bottom=101;edge=1;items={};mode="dropdown";z=3;};
 edit={cls="edit";text="Edit";left=133;top=149;right=250;bottom=169;edge=1;z=5;};
 edit2={cls="edit";text="Edit";left=133;top=179;right=250;bottom=199;edge=1;z=7;};
 groupbox={cls="groupbox";text="菜单";left=38;top=42;right=728;bottom=413;edge=1;z=1;};
 static={cls="static";text="变量命名工具 ver0.1";left=38;top=11;right=515;bottom=40;font=LOGFONT(h=-16);transparent=1;z=2;};
 static2={cls="static";text="变量名称：";left=59;top=154;right=181;bottom=169;transparent=1;z=4;};
 static4={cls="static";text="建议名称：";left=59;top=184;right=181;bottom=199;transparent=1;z=6;};
+static5={cls="static";text="命名方式：";left=59;top=83;right=129;bottom=98;transparent=1;z=9;};
 
 )
 /*}}*/
@@ -34,8 +35,8 @@ authorization = http.get(authorization_url)
 mainForm.combobox.onListChange = function(id,event){  
 	select(mainForm.combobox.selText){
 	case '常量' {mainForm.static4.text = '常量：'}
-	case '大驼峰' {mainForm.static4.text = '大驼峰：'}
-	case '小驼峰' {mainForm.static4.text = '小驼峰：'}
+	case '大驼峰(类命名)' {mainForm.static4.text = '大驼峰：'}
+	case '小驼峰(方法命名)' {mainForm.static4.text = '小驼峰：'}
 	case '下划线' {mainForm.static4.text = '下划线：'}
 	case '前下划线' {mainForm.static4.text = '前下划线：'}
 	case '项目名' {mainForm.static4.text = '项目名：'}
